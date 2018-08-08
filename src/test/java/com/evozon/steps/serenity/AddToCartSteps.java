@@ -23,4 +23,8 @@ public class AddToCartSteps extends ScenarioSteps{
 		addToCartPage.selectProductFromPage(productName);
 		
 	}
+	
+	public void addSelectedProductToCart() {
+		addToCartPage.addSelectedProductToCart();
+	}
 }

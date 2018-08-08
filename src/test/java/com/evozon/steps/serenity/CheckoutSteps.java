@@ -25,12 +25,12 @@ public class CheckoutSteps extends ScenarioSteps{
 	}
 	
 	@Step
-	public void setShippingInformation() {
+	public void setShippingInformation() throws InterruptedException {
 		checkoutPage.setShippingInformation();
 	}
 	
 	@Step
-	public void continueShippingInformation() {
+	public void continueShippingInformation() throws InterruptedException {
 		checkoutPage.continueShippingInformation();
 	}
 	
@@ -38,4 +38,36 @@ public class CheckoutSteps extends ScenarioSteps{
 	public void setShippingMethod() {
 		checkoutPage.setShippingMethod();
 	}
+	
+	@Step
+	public void selectShippingMethod() {
+		checkoutPage.selectShippingMethod();
+	}
+	
+	@Step
+	public void continueShippingMethod() {
+		checkoutPage.setShippingMethod();
+	}
+	
+	@Step
+	public void setPaymentInformation() {
+		checkoutPage.setPaymentInformation();
+	}
+	
+	@Step
+	public void continuePaymentInformation() {
+		checkoutPage.continuePaymentInformation();
+	}
+	
+	@Step
+	public void setOrderReview() {
+		checkoutPage.setOrderReview();
+	}
+	
+	@Step
+	public void placeOrder() {
+		checkoutPage.placeOrder();
+	}
+	
 }
+

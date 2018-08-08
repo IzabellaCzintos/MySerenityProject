@@ -1,5 +1,6 @@
 package Main;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -21,13 +22,19 @@ public class CheckoutTests extends BaseTest{
 	@Managed(uniqueSession=true)
 	public WebDriver driver;
 	
+	@Before
+	public void maximiseScreen() {
+		driver.manage().window().maximize();
+	}
+	
+	
 	@Steps
 	CheckoutSteps checkoutSteps;
 	@Steps
 	LoginSteps loginSteps;
 	
 	@Test
-	public void proceedToCheckout() {
+	public void proceedToCheckout() throws InterruptedException {
 		
 		loginSteps.login(user, pass);	
 		

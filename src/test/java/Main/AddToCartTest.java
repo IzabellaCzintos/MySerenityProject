@@ -14,10 +14,10 @@ import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.junit.annotations.UseTestDataFrom;
 
-@RunWith(SerenityParameterizedRunner.class)
-@UseTestDataFrom(value=com.evozon.features.search.Constants.CSV_FILES_PATH+"CategoryOfProducts.csv")
+@RunWith(SerenityRunner.class)
+//@UseTestDataFrom(value=com.evozon.features.search.Constants.CSV_FILES_PATH+"CategoryOfProducts.csv")
 
-public class AddToCartTest extends BaseTest{
+public class AddToCartTest {
 	
 	@Managed(uniqueSession=false)
 	public WebDriver driver;
@@ -36,8 +36,8 @@ public class AddToCartTest extends BaseTest{
 	@Steps
 	AddToCartSteps addToCartSteps;
 	
-	@Steps
-	String category,subcategory;	
+	//@Steps
+	//String category,subcategory;	
 	
 	
 	
@@ -45,9 +45,10 @@ public class AddToCartTest extends BaseTest{
 	public void addProductToCart() {
 		loginSteps.login(user, pass);
 		
-		addToCartSteps.selectCategory(category);
-		addToCartSteps.selectSubcategory(subcategory);
+		addToCartSteps.selectCategory("ACCESSORIES");
+		addToCartSteps.selectSubcategory("EYEWEAR");
 		addToCartSteps.selectProductFromPage("AVIATOR SUNGLASSES");
+	//	addToCartSteps.addSelectedProductToCart();
 		
 	}
 	

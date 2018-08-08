@@ -19,17 +19,16 @@ public class AddToCartPage extends PageObject{
 	@FindBy(css="li.level0.nav-3>ul>li")
 	private List<WebElementFacade> subcategoryChoose;
 	
-	@FindBy(css="ul.products-grid")
+	@FindBy(css=".products-grid .item")
 	private List<WebElementFacade> productsOnPage;
 	
-	@FindBy(css="button.button btn-cart")
+	@FindBy(css=".item button.btn-cart ")
 	private WebElement addToCartButton;
 	
 	
 	public void selectProductCategory(String categoryName) {
 		for (WebElementFacade element : categoryChoose) {
 			if(element.getText().equalsIgnoreCase(categoryName)) {
-				
 				Actions builder = new Actions(getDriver());
 				Actions hoverOverLocationSelector = builder.moveToElement(element);
 				hoverOverLocationSelector.perform();
@@ -40,6 +39,7 @@ public class AddToCartPage extends PageObject{
 	
 	public void selectProductSubcategory(String subcategoryName) {
 		for(WebElementFacade element: subcategoryChoose) {
+			//System.out.println(element);
 			if(element.getText().equalsIgnoreCase(subcategoryName)) {
 				element.click();
 				break;
@@ -49,16 +49,16 @@ public class AddToCartPage extends PageObject{
 	}
 	
 	public void selectProductFromPage(String productName) {
-		
 		for(WebElementFacade element: productsOnPage) {
-			
 			if(element.getText().equalsIgnoreCase(productName)) {
 				element.click();
 				break;
-			}
-			
+
+				}
+				
 		}
 	}
+	
 	
 	public void addSelectedProductToCart() {
 		addToCartButton.click();
