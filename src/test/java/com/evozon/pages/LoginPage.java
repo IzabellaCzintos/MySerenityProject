@@ -7,11 +7,16 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 
-@DefaultUrl("http://qa3.dev.evozon.com/customer/account/login/")
+@DefaultUrl("http://qa3.dev.evozon.com/")
 
 public class LoginPage extends PageObject{
-	 
 	
+	 @FindBy(css="a.skip-account span.icon")
+	private WebElement accountIcon; 
+	 
+	 @FindBy(css="div.skip-content div.links li.last")
+	 private WebElement loginDropdown;
+	 
 	 @FindBy(css="#email")
 	 private WebElement emailField;
 	 
@@ -23,6 +28,14 @@ public class LoginPage extends PageObject{
 	 
 	 @FindBy(css="#email")
 	 private WebElement checkRequiredField;
+	 
+	 public void clickAccountIcon() {
+		 accountIcon.click();
+	 }
+	 
+	 public void selectLogin() {
+		 loginDropdown.click();
+	 }
 	 
 	 public void setEmailField(String emailAddress) {
 		 emailField.sendKeys(emailAddress);

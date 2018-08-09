@@ -19,6 +19,16 @@ public class LoginSteps extends ScenarioSteps{
 	}
 	
 	@Step
+	public void clickAccountIcon() {
+		loginPage.clickAccountIcon();
+	}
+	
+	@Step
+	public void selectLogin() {
+		loginPage.selectLogin();
+	}
+	
+	@Step
 	public void loginEmail(String email) {
 		loginPage.setEmailField(email);	
 	}

@@ -24,6 +24,8 @@ public class LoginTests extends BaseTest{
 	@Test
 	public void test01_Login() {
 		loginSteps.openPage();
+		loginSteps.clickAccountIcon();
+		loginSteps.selectLogin();
 		loginSteps.loginEmail(user);
 		loginSteps.loginPass(pass);
 		loginSteps.submit();
