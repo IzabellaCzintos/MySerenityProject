@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import com.evozon.steps.serenity.AddToCartSteps;
 import com.evozon.steps.serenity.LoginSteps;
 import com.evozon.steps.serenity.SearchSteps;
 
@@ -23,6 +24,10 @@ public class SearchTests {
 	public void maxmise() {
 		driver.manage().window().maximize();
 	}
+	
+	@Steps
+	AddToCartSteps addToCartSteps;
+	
 	@Steps
 	SearchSteps searchSteps;
 	
@@ -33,7 +38,9 @@ public class SearchTests {
 		searchSteps.setSearchField(product);
 		searchSteps.searchProduct();
 		searchSteps.verifySearchPage();
-		searchSteps.displayProductsFromPage();
+		searchSteps.displayProductsFromPage(product);
+		addToCartSteps.selectProductFromPage(product);
+		addToCartSteps.addSelectedProductToCart();
 	}
 
 }

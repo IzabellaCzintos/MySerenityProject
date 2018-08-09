@@ -28,10 +28,11 @@ public class SearchSteps extends ScenarioSteps{
 
 	public void verifySearchPage() {
 		String expectedUrl="http://qa3.dev.evozon.com/catalogsearch/result/?q=skirt";
-		Assert.assertEquals(getDriver().getCurrentUrl(), expectedUrl);
+		Assert.assertTrue(getDriver().getCurrentUrl().equals(expectedUrl));
+		System.out.println("Actual URL same as Expected URL");
 	}
 	
-	public void displayProductsFromPage() {
-		searchPage.displayProductsFromPage();
+	public void displayProductsFromPage(String searchedItem) {
+		searchPage.displayProductsFromPage(searchedItem);
 	}
 }

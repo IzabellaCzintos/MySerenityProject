@@ -55,7 +55,7 @@ public class LoginPage extends PageObject{
 	 }
 	 
 	 public void isUserLoggedIn(String userName) {
-		 boolean aux;
+		 
 		 Assert.assertTrue(successLoginMsg.getText().toLowerCase().contains(userName.toLowerCase()));
 		 System.out.println("User is logged in");
 

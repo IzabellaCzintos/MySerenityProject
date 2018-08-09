@@ -2,6 +2,7 @@ package com.evozon.pages;
 
 import java.util.List;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -15,32 +16,33 @@ import net.thucydides.core.annotations.DefaultUrl;
 
 public class SearchPage extends PageObject{
 	
-	@FindBy(css=".products-grid > li*")
+	@FindBy(css="div.category-products ul.products-grid")
 	private List<WebElementFacade> searchProducts; 
 	
 	@FindBy(id="search")
 	private WebElementFacade searchField;
 	
-	@FindBy(css="#search_mini_form > div.input-box > button")
-	private WebElementFacade searchButton;
+	@FindBy(css="div.input-box .search-button")
+	private WebElementFacade searchIcon;
 	
 	public void setSearchField(String productSearch) {
 		searchField.sendKeys(productSearch);
 	}
 	
 	public void clickSearch() {
-		searchButton.click();
+		searchIcon.click();
 	}
 	
 	
-	public boolean displayProductsFromPage() {
+	public void displayProductsFromPage(String searchedItem) {
+		
 		for (WebElementFacade element : searchProducts) {
-			if(element.containsText("skirt"))
-				return true;
+			Assert.assertTrue(element.getText().toLowerCase().contains(searchedItem.toLowerCase()));
+			System.out.println("Item is relevant for keyword");
+				
+			
+				
 		}
-		List<WebElementFacade> elementCount=findAll("id=\'product-collection-image*\'");
-		//return extract(elementCount, on(WebElement.class).getText());
-		return false;
-	}
-
+		
+}
 }
