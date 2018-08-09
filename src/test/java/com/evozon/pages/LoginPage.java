@@ -1,5 +1,6 @@
 package com.evozon.pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
@@ -29,6 +30,9 @@ public class LoginPage extends PageObject{
 	 @FindBy(css="#email")
 	 private WebElement checkRequiredField;
 	 
+	 @FindBy(css="p.hello")
+	 private WebElement successLoginMsg;
+	 
 	 public void clickAccountIcon() {
 		 accountIcon.click();
 	 }
@@ -48,6 +52,13 @@ public class LoginPage extends PageObject{
 	 public void login() {
 		 loginButton.click();
 		 
+	 }
+	 
+	 public void isUserLoggedIn(String userName) {
+		 boolean aux;
+		 Assert.assertTrue(successLoginMsg.getText().toLowerCase().contains(userName.toLowerCase()));
+		 System.out.println("User is logged in");
+
 	 }
 	
 

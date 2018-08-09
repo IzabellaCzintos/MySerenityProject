@@ -51,9 +51,16 @@ public class LoginSteps extends ScenarioSteps{
 		
 	}
 	
+	@Step
+	public void verifyLoginMsg(String userName) {
+		loginPage.isUserLoggedIn(userName);
+	}
+	
 	@StepGroup
 	public void login(String email, String password){
 		openPage();
+		clickAccountIcon();
+		selectLogin();
 		loginEmail(email);
 		loginPass(password);
 		submit();

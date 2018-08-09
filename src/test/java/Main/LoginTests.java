@@ -29,7 +29,8 @@ public class LoginTests extends BaseTest{
 		loginSteps.loginEmail(user);
 		loginSteps.loginPass(pass);
 		loginSteps.submit();
-		loginSteps.verifyLogin();
+	//	loginSteps.verifyLogin();
+		loginSteps.verifyLoginMsg("aaa");
 	}
 
 	
