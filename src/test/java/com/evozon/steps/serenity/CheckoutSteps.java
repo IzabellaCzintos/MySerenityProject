@@ -15,6 +15,16 @@ public class CheckoutSteps extends ScenarioSteps{
 	}
 	
 	@Step
+	public void clickAccountIcon() {
+		checkoutPage.clickAccountIcon();
+	}
+	
+	@Step
+	public void selectCheckout() {
+		checkoutPage.selectCheckout();
+	}
+	
+	@Step
 	public void setBillingInformation() {
 		checkoutPage.setBillingInformation();
 	}
@@ -30,42 +40,42 @@ public class CheckoutSteps extends ScenarioSteps{
 	}
 	
 	@Step
-	public void continueShippingInformation() throws InterruptedException {
+	public void continueShippingInformation() throws InterruptedException  /*throws InterruptedException*/ {
 		checkoutPage.continueShippingInformation();
 	}
 	
 	@Step
-	public void setShippingMethod() {
+	public void setShippingMethod() throws InterruptedException{
 		checkoutPage.setShippingMethod();
 	}
 	
 	@Step
-	public void selectShippingMethod() {
+	public void selectShippingMethod() throws InterruptedException{
 		checkoutPage.selectShippingMethod();
 	}
 	
 	@Step
-	public void continueShippingMethod() {
+	public void continueShippingMethod() throws InterruptedException{
 		checkoutPage.setShippingMethod();
 	}
 	
 	@Step
-	public void setPaymentInformation() {
+	public void setPaymentInformation() throws InterruptedException{
 		checkoutPage.setPaymentInformation();
 	}
 	
 	@Step
-	public void continuePaymentInformation() {
+	public void continuePaymentInformation() throws InterruptedException{
 		checkoutPage.continuePaymentInformation();
 	}
 	
 	@Step
-	public void setOrderReview() {
+	public void setOrderReview() throws InterruptedException{
 		checkoutPage.setOrderReview();
 	}
 	
 	@Step
-	public void placeOrder() {
+	public void placeOrder() throws InterruptedException{
 		checkoutPage.placeOrder();
 	}
 	

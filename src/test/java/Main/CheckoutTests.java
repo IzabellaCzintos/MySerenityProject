@@ -34,16 +34,23 @@ public class CheckoutTests extends BaseTest{
 	LoginSteps loginSteps;
 	
 	@Test
-	public void proceedToCheckout() throws InterruptedException {
+	public void proceedToCheckout() throws InterruptedException  {
 		
 		loginSteps.login(user, pass);	
 		
-		checkoutSteps.openPage();
+		//checkoutSteps.openPage();
+		checkoutSteps.clickAccountIcon();
+		checkoutSteps.selectCheckout();
 		checkoutSteps.setBillingInformation();
 		checkoutSteps.continueBillingInformation();
 		checkoutSteps.setShippingInformation();
 		checkoutSteps.continueShippingInformation();
 		checkoutSteps.setShippingMethod();
+		checkoutSteps.continueShippingMethod();
+		checkoutSteps.setPaymentInformation();
+		checkoutSteps.continuePaymentInformation();
+		checkoutSteps.setOrderReview();
+		checkoutSteps.placeOrder();
 		
 	}
 }
