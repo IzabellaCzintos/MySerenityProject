@@ -22,13 +22,14 @@ public class AddToCartPage extends PageObject{
 	@FindBy(css=".products-grid .item")
 	private List<WebElementFacade> productsOnPage;
 	
-	@FindBy(css=".item button.btn-cart ")
+	@FindBy(css="div.add-to-cart button.button ")
 	private WebElement addToCartButton;
 	
 	
 	public void selectProductCategory(String categoryName) {
 		for (WebElementFacade element : categoryChoose) {
-			if(element.getText().equalsIgnoreCase(categoryName)) {
+			//if(element.getText().equalsIgnoreCase(categoryName))
+			if(element.getText().toLowerCase().contains(categoryName.toLowerCase())){
 				Actions builder = new Actions(getDriver());
 				Actions hoverOverLocationSelector = builder.moveToElement(element);
 				hoverOverLocationSelector.perform();
@@ -40,7 +41,8 @@ public class AddToCartPage extends PageObject{
 	public void selectProductSubcategory(String subcategoryName) {
 		for(WebElementFacade element: subcategoryChoose) {
 			//System.out.println(element);
-			if(element.getText().equalsIgnoreCase(subcategoryName)) {
+			//if(element.getText().equalsIgnoreCase(subcategoryName)) 
+			if(element.getText().toLowerCase().contains(subcategoryName.toLowerCase())){
 				element.click();
 				break;
 			}
@@ -50,7 +52,7 @@ public class AddToCartPage extends PageObject{
 	
 	public void selectProductFromPage(String productName) {
 		for(WebElementFacade element: productsOnPage) {
-			if(element.getText().equalsIgnoreCase(productName)) {
+			if(element.getText().toLowerCase().contains(productName.toLowerCase())) {
 				element.click();
 				break;
 
