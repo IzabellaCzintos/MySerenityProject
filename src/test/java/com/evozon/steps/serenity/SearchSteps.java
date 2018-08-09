@@ -32,7 +32,7 @@ public class SearchSteps extends ScenarioSteps{
 		System.out.println("Actual URL same as Expected URL");
 	}
 	
-	public void displayProductsFromPage(String searchedItem) {
-		searchPage.displayProductsFromPage(searchedItem);
+	public void displayProductsFromPageVerify(String searchedItem) {
+		searchPage.displayProductsFromPageVerify(searchedItem);
 	}
 }

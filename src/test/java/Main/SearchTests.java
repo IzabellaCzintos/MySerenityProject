@@ -38,7 +38,7 @@ public class SearchTests {
 		searchSteps.setSearchField(product);
 		searchSteps.searchProduct();
 		searchSteps.verifySearchPage();
-		searchSteps.displayProductsFromPage(product);
+		searchSteps.displayProductsFromPageVerify(product);
 		addToCartSteps.selectProductFromPage(product);
 		addToCartSteps.addSelectedProductToCart();
 	}

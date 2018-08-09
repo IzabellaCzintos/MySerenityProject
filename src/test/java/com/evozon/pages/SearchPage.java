@@ -34,11 +34,11 @@ public class SearchPage extends PageObject{
 	}
 	
 	
-	public void displayProductsFromPage(String searchedItem) {
+	public void displayProductsFromPageVerify(String searchedItem) {
 		
 		for (WebElementFacade element : searchProducts) {
 			Assert.assertTrue(element.getText().toLowerCase().contains(searchedItem.toLowerCase()));
-			System.out.println("Item is relevant for keyword");
+			System.out.println("Items relevant to searched keyword!");
 				
 			
 				
